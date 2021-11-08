@@ -1,0 +1,12 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block page_header %}
+  <div class="jumbotron">
+    <h2 class="display-3">{Log}天涯~ <br/>发现自己的足迹。</h2>
+
+    <p class="lead">欢迎来到LOG天涯，在这里添加你的ideas,追踪自己的历史。无论你学习了什么，
+                    或者有任何感兴趣的事情，都可以进行分享和记录，Go For It.</p>
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+        role="button">快来注册吧！&raquo;</a>
+  </div>
+{% endblock page_header %}
