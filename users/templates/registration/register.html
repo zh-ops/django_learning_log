@@ -1,0 +1,22 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h2>新用户注册:</h2>
+{% endblock page_header%}
+
+
+{% block content %}
+
+<nav class="navbar navbar-light bg-light">
+<form method="post" action="{% url 'users:register' %}" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons %}
+    <button name="submit" class="btn btn-outline-success">注册</button>
+  {% endbuttons %}
+  <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+</form>
+</nav>
+
+{% endblock content %}

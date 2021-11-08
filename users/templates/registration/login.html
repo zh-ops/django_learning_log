@@ -1,0 +1,23 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h2>登录个人账户</h2>
+{% endblock page_header%}
+
+
+{% block content %}
+<nav class="navbar navbar-light bg-light">
+  <form method="post" action="{% url 'users:login' %}" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">登录</button>
+    {% endbuttons %}
+    
+    <input type="hidden" name="next"
+      value="{% url 'learning_logs:index' %}" />
+  </form>
+</nav>
+
+{% endblock content %}
